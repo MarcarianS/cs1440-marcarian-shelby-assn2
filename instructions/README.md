@@ -18,7 +18,7 @@ this file directly from the BLS website as there is a possibility that they
 will change its contents without warning, rendering your output different from
 the provided examples.
 
-* [2019_annual_singlefile.zip](/uploads/8703b867882ff67788c59129620064f5/2019_annual_singlefile.zip)
+* [2019_annual_singlefile.zip](https://gitlab.cs.usu.edu/erik.falor/cs1440-falor-erik-assn2/uploads/8703b867882ff67788c59129620064f5/2019_annual_singlefile.zip)
 
 Once this file is downloaded, copy it into each of the subdirectories under
 `data/` and follow the instructions to create the smaller data sets.  Use the
