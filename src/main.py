@@ -23,7 +23,7 @@ if __name__ == '__main__':
     print("TODO: Fill in the report for all industries")  # DELETE ME
     rpt.all.num_areas           = 1337
 
-    rpt.all.gross_annual_wages  = 13333337
+    rpt.all.total_annual_wages  = 13333337
     rpt.all.max_annual_wage     = ("Trantor", 123456)
 
     rpt.all.total_estab         = 42
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     print("TODO: Fill in the report for the software publishing industry")  # DELETE ME
     rpt.soft.num_areas          = 1010
 
-    rpt.soft.gross_annual_wages = 101001110111
+    rpt.soft.total_annual_wages = 101001110111
     rpt.soft.max_annual_wage    = ("Helicon", 110010001)
 
     rpt.soft.total_estab        = 1110111
