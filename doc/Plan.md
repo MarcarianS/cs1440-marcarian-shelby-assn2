@@ -4,47 +4,31 @@
 
 # 0.  From Problem Analysis to Data Definitions
 
-**Problem Analysis is the process of understanding the problem the software
-will address and to document in detail what the software system needs to do.
-In the real world this phase demands close interaction between developers and
-the client.  Ideally, end-users of the system are interviewed for their input.**
-
-**In this course you will receive detailed requirements in the form of the
-assignment description.  I stand-in for the client and end-users when you have
-questions concerning their needs and desires.**
-
-**In this phase of the design process you should use [The Feynman
-Technique](https://www.youtube.com/watch?v=tkm0TNFzIeg) To ensure that you
-understand what is being asked of you.**
-
-**The output of this phase of the development process is a restatement of the
-requirements in your own words.  Putting new problems into your own words will
-help you identify your "Known knowns" and your "known unknowns".**
-
-**As part of your restatement of the problem identify information that must be
-represented and decide how to represent in the chosen programming language.**
-
-**Formulate data definitions and illustrate them with examples.**
-
+Use FIPS codes to determine which fields of lines to include in the report 
+for each field of information. ignore FIPS codes beginning with letters or 
+ending in 000.
+It looks like we will just be ignoring lines with the wrong FIPS codes, and 
+cutting out columns with unnessecary data.
+after the appropriate rows and columns have been ignored and cut from 
+the file, the appropriate fields of data will be returned to the program to
+be printed out in the report. Will need to keep cols 1, 2 3, 9, 10, 11 
 
 # 1.  System Analysis
 
-**Analyze the flow of data throughout the program.  Does the program get input
-from the user?  If so, does it come from interactive prompts or from
-command-line arguments?  Is data incorporated from a file on the disk, from a
-database or from the internet?**
+**Input
+-a single directory which contains the 2019 data file, trimmed appropriately
 
-**How is output given?  On the screen in the form of text or graphics?  Are
-output files created, and what form do they take?**
-
-**Identify the non-trivial formulas you need to create.  If there aren't any then
-state "no formulas" in this section.**
-
-**State what kind of data each desired function consumes and produces.  Formulate
-a concise description of what the function computes.  Define a stub that lives
-up to the signature.**
-
-
+**Internal Data: 
+-if the lines first entry contains a letter or ends in 000, ignore that line
+-then, for all industry, if the first and second entry are 0 and 10
+-add appropriate column values to variables for total annual wages, total 
+number establ, total ann emplvl. 
+-keep counter for how many lines make it this far(will be number of FIPS
+in report for this section)
+-check if each wage, est, and emplvl is greater than current max. set max to 
+that val, and record FIPS so I can reference the titles csv for the name.
+-or, for all software, repreat the process.
+-for through the titles csv to find the name of each county max.
 # 2.  Functional Examples
 
 **Design a process for obtaining the output from the input.  Consider both *good*
