@@ -12,7 +12,11 @@ cutting out columns with unnessecary data.
 after the appropriate rows and columns have been ignored and cut from 
 the file, the appropriate fields of data will be returned to the program to
 be printed out in the report. Will need to keep cols 1, 2 3, 9, 10, 11 
-
+Do accept:
+-overseaslocations- 996
+-multiCounty not statewide - 997
+-out of state - 998
+-unknown or unidentified - 999
 # 1.  System Analysis
 
 **Input
@@ -29,27 +33,87 @@ in report for this section)
 that val, and record FIPS so I can reference the titles csv for the name.
 -or, for all software, repreat the process.
 -for through the titles csv to find the name of each county max.
+
+**Function Stub:
+if length sys.argv < 2
+	print usage message, need one directory
+if opening the areatitles fails, let python crash
+convert areaTitles tp dictionary??
+
+open 2019data (crash if doesn't open)
+def variables allNumAreas, allTotalAnnualWages, etc all = 0
+for line in fileObj, split on "," max 11, remove 12th element 
+	check is Fips numeric and if endswith 000
+	if not, consider that line
+		if lineLst[1] =  "0" and [2] = "10"
+			allNumAreas += 1
+			alltotAnnualWages += int(linelist[11]
+			allTotEst += int(linelist[9])
+			alltotempl += int(lineList[10])
+			if lineList[9] > allmaxest
+				allmaxest = linelist[9]
+				keep fips to get name(use dict?)
+			if lineList[10] > allmaxempl and [11] >maxwage
+				same process
+		if linelist[1] = "5" and[2] = "5112"
+			same process, replace all with soft for varName
+					
+**Output:
+-a formatted data report of all and software industries.
+
 # 2.  Functional Examples
+ 
+if len(sys.argv) < 2
+	print(Usage: src/main.py DATA_DIRECTORY)
+else
+	areaTitlesObj = open(data.area_titles.csv)
+	areaTitlesObj.readline()
+        for line in areaTitlesObj:
+            line = line.strip()
+            fips, title = line.split(",")
+            if fips.isnumeric() and not fips.endswith("000"):
+                areaTitlesDict[fips] = title	
+	
+	dataObj = open(data.2019.annual.singlefile.csv)
+	allNumAreas = 0
+	allTotWages = 0
+	allMaxWage = 0
+	allmaxwagefips?
+	allTotestab = 0
+	allMaxEstab = 0
+	allmaxestabfips?
+	allTotEmp = 0
+	allmaxEmp = 0
+	allMaxEmpfips?
 
-**Design a process for obtaining the output from the input.  Consider both *good*
-and *bad* inputs.  Find or create examples of both kinds of input.**
+	softNumAreas = 0
+        softTotWages = 0
+        softMaxWage = 0
+        softmaxwagefips?
+        softTotestab = 0
+        softMaxEstab = 0
+        softmaxestabfips?
+        softTotEmp = 0
+        softmaxEmp = 0
+        softMaxEmpfips?
+	
+	for line in dataObj
+		line.split(11, ",")
+		line.remove(line[12])
+		if line[0].isnumeric() and !line[0].endswith("000")
+			if line[1] = "0" and line[2] = "10"
+				allnumAread += 1
+				alltotAnnualWages += int(linelist[11]
+        	                allTotEst += int(linelist[9])
+	                        alltotempl += int(lineList[10])
+                	        if lineList[9] > allmaxest
+                                	allmaxest = linelist[9]
+                                	keep fips to get name(use dict?)
+                        	if lineList[10] > allmaxempl and [11] >maxwage
+					same process
+			if linelist[1] = "5" and[2] = "5112"
+	                        same process, replace all with soft for varName
 
-**Work out problem examples on paper, on a whiteboard or some other medium that
-is *not* your computer.  It is a mistake to begin writing executable code
-before you thoroughly understand what form the algorithm(s) must take.**
-
-**Instead, describe components of the system in *"pseudocode"*.  Expect to make
-lots of mistakes at this point.  You will find that it is much easier to throw
-away pseudocode than real code.**
-
-**Manually work through several examples that illustrate the program's overall
-purpose, as well as the purpose of each component of the finished system.  You
-will converge on a correct solution much faster if you feel comfortable making
-mistakes as you go.**
-
-**This phase involves the use of many levels of abstraction to decompose the
-problem into manageable components, and design strategies for implementing each
-component.  Components may be functions, modules or classes.**
 
 
 # 3.  Function Template
