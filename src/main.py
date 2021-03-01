@@ -10,8 +10,8 @@ if __name__ == '__main__':
         print("Usage: src/main.py DATA_DIRECTORY")
     else:
 
-        print("Reading the databases...", file=sys.stderr)
-        before = time.time()
+        # print("Reading the databases...", file=sys.stderr)
+        # before = time.time()
 
         areaTitlesDict = {}
         areaTitlesObj = open(str(sys.argv[1] + "/area_titles.csv"))
@@ -92,8 +92,8 @@ if __name__ == '__main__':
                         softMaxWage = int(lineList[10])
                         softMaxWageArea = areaTitlesDict[lineList[0]]
 
-        after = time.time()
-        print(f"Done in {after - before:.3f} seconds!", file=sys.stderr)
+        # after = time.time()
+        # print(f"Done in {after - before:.3f} seconds!", file=sys.stderr)
 
 
         rpt.all.num_areas           = allNumAreas

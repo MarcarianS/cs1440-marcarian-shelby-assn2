@@ -70,7 +70,8 @@ else
 	areaTitlesObj.readline()
         for line in areaTitlesObj:
             line = line.strip()
-            fips, title = line.split(",")
+		line = line.strip("\"")		
+            fips, title = line.split("","")
             if fips.isnumeric() and not fips.endswith("000"):
                 areaTitlesDict[fips] = title	
 	
@@ -78,38 +79,40 @@ else
 	allNumAreas = 0
 	allTotWages = 0
 	allMaxWage = 0
-	allmaxwagefips?
+	allmaxwagearea = ''
 	allTotestab = 0
 	allMaxEstab = 0
-	allmaxestabfips?
+	allmaxestabArea = ''
 	allTotEmp = 0
 	allmaxEmp = 0
-	allMaxEmpfips?
+	allMaxEmparea = ''
 
 	softNumAreas = 0
         softTotWages = 0
         softMaxWage = 0
-        softmaxwagefips?
+        softmaxwagearea = ''
         softTotestab = 0
         softMaxEstab = 0
-        softmaxestabfips?
+        softmaxestabarea = ''
         softTotEmp = 0
         softmaxEmp = 0
-        softMaxEmpfips?
+        softMaxEmparea = ''
 	
 	for line in dataObj
 		line.split(11, ",")
-		line.remove(line[12])
-		if line[0].isnumeric() and !line[0].endswith("000")
+		line.remove(line[11])
+		for i in range(len(lineList))
+			lineList[i] = lineList[i].strip(""")
+		if line[0] in areaDictionary
 			if line[1] = "0" and line[2] = "10"
 				allnumAread += 1
-				alltotAnnualWages += int(linelist[11]
-        	                allTotEst += int(linelist[9])
-	                        alltotempl += int(lineList[10])
-                	        if lineList[9] > allmaxest
-                                	allmaxest = linelist[9]
+				alltotAnnualWages += int(linelist[10]
+        	                allTotEst += int(linelist[8])
+	                        alltotempl += int(lineList[9])
+                	        if lineList[8] > allmaxest
+                                	allmaxest = linelist[8]
                                 	keep fips to get name(use dict?)
-                        	if lineList[10] > allmaxempl and [11] >maxwage
+                        	if lineList[9] > allmaxempl and [10] >maxwage
 					same process
 			if linelist[1] = "5" and[2] = "5112"
 	                        same process, replace all with soft for varName
@@ -143,23 +146,16 @@ technologies you will spend less and less time in this phase of the process.**
 
 # 5.  Testing
 
-**Articulate the examples given in step #2 as tests and ensure that each
-function passes all of its tests.  Doing so discovers mistakes.  Tests also
-supplement examples in that they help others read and understand the definition
-when the need arises—and it will arise for any serious program.**
-
-**As bugs are discovered and fixed, devise new test cases that will detect these
-problems should they return.**
-
-**If you didn't come across any bugs (lucky you!) think of a possible flaw and a
-test that can be employed to screen for it.**
-
-**At a minimum you should create a document explaining step-by-step how a
-non-technical user may manually test your program to satisfy themselves that it
-operates correctly.  Explain the entire process starting how to launch the
-program, what inputs they should give and what results they should see at every
-step.  Provide test cases of good and bad inputs to catch both false positives
-and false negatives.  Any deviation from the expected outputs are errors.**
-
-**The ideal is to write an automated test to avoid all manual labor beyond
-launching the test.**
+-Ran through each of the files in data.
+-(fixed)found that i had an off by one error in the first run (linelist was 11 long)
+-(fixed)Found another off by 1 with wages, emp, and estab
+-(fixed)removed the qutations from each value so the program could tell ifnumeric
+-(fixed)copy/paste error: was using code from allindustry, forgot to change 
+variable name to soft for max reports, returned an empty string for areas.
+-tested with ending "/" and without, runs correct with both
+	ex. INPUT: data/DE_soft/
+	    INPUT: data/DE_soft
+-Note* does not work if "/" is taken uot of the hardcoded path, but the
+extra front slash from the command line argument doesn't seem to affect it.
+Seems like it doesn't matter how many frontslashes there are hardcoded, as
+long as there is at least one, either from CLI or hardcoded.

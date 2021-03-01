@@ -6,3 +6,5 @@
 | February 23 | problem analysis and System analysis of SDP
 | February 25 | PsuedoCode without dictionary
 | February 26 | learned dictionary, implementation, no testing yet 
+| February 27 | No Work
+| February 28 | Finished implementation and testing on my system
