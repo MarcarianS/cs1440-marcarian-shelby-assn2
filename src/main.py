@@ -7,7 +7,7 @@ if __name__ == '__main__':
     rpt = Report()
 
     if len(sys.argv) < 2:
-        print("Usage: src/main.py DATA_DIRECTORY")
+        print("Usage: PATH_TO_MAIN.PY PATH_TO_DIRECTORY")
     else:
 
         # print("Reading the databases...", file=sys.stderr)
